@@ -27,3 +27,10 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+
+//  accessKeyId: 'AKIAREU7AUOTQQAJAJYU',
+//  secretAccessKey: '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',
+
+// new
+// accessKeyId: 'AKIAREU7AUOT62XIMFM5',
+//     secretAccessKey: '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',

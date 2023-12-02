@@ -1,6 +1,6 @@
-import { User } from 'src/user/entities/user.entity';
 import { IsNotEmpty } from 'class-validator';
-export class CreatePostDto {
+
+export class UpdatePostDto {
   @IsNotEmpty()
   title: string;
   @IsNotEmpty()
@@ -10,5 +10,5 @@ export class CreatePostDto {
   @IsNotEmpty()
   status: number;
   @IsNotEmpty()
-  user: User;
+  key_aws: string;
 }

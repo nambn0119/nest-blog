@@ -21,6 +21,9 @@ export class Post {
   @Column()
   thumbnail: string;
 
+  @Column()
+  key_aws: string;
+
   @Column({ type: 'int', default: 1 })
   status: number;
 
