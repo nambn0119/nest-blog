@@ -1,4 +1,5 @@
 import { IsNotEmpty } from 'class-validator';
+import { Category } from 'src/category/entities/category.entity';
 
 export class UpdatePostDto {
   @IsNotEmpty()
@@ -11,4 +12,7 @@ export class UpdatePostDto {
   status: number;
   @IsNotEmpty()
   key_aws: string;
+
+  @IsNotEmpty()
+  category: Category;
 }

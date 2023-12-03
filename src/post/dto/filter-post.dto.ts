@@ -7,4 +7,6 @@ export class FilterPostDto {
   item_per_page: string;
   @IsNotEmpty()
   search: string;
+
+  category: string;
 }

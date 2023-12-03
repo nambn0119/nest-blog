@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { S3 } from 'aws-sdk';
 import { PostModule } from './post/post.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { PostModule } from './post/post.module';
     ConfigModule.forRoot(),
     S3,
     PostModule,
+    CategoryModule,
     // S3Client,
   ],
   controllers: [AppController],
