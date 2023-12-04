@@ -31,7 +31,10 @@ let AuthGuard = class AuthGuard {
             request['user_data'] = payload;
         }
         catch (error) {
-            throw new common_1.UnauthorizedException();
+            throw new common_1.HttpException({
+                status: 419,
+                message: 'Token expired',
+            }, 419);
         }
         return true;
     }
