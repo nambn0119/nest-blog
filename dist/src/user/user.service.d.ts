@@ -18,4 +18,5 @@ export declare class UserService {
     Delete(id: number): Promise<DeleteResult>;
     upload(fileName: string, avatar: Buffer): Promise<S3.ManagedUpload.SendData>;
     updateAvatar(id: number, avatar: string): Promise<UpdateResult>;
+    multipleDelete(ids: string[]): Promise<DeleteResult>;
 }

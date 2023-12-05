@@ -9,6 +9,7 @@ export declare class UserController {
     constructor(userService: UserService);
     findAll(query: filterUserDto): Promise<User[]>;
     findOne(id: string): Promise<User>;
+    multipleDelete(ids: string[]): Promise<import("typeorm").DeleteResult>;
     create(createUserDto: CreateUserDto): Promise<User>;
     update(id: string, updateUserDto: UpdateUserDto): Promise<import("typeorm").UpdateResult>;
     delete(id: string): Promise<import("typeorm").DeleteResult>;

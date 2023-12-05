@@ -5,6 +5,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseArrayPipe,
   Post,
   Put,
   Query,
@@ -42,6 +43,15 @@ export class UserController {
   @Get(':id')
   findOne(@Param('id') id: string): Promise<User> {
     return this.userService.findOne(Number(id));
+  }
+
+  @UseGuards(AuthGuard)
+  @Delete('multiple')
+  multipleDelete(
+    @Query('ids', new ParseArrayPipe({ items: String, separator: ',' }))
+    ids: string[],
+  ) {
+    return this.userService.multipleDelete(ids);
   }
 
   @UseGuards(AuthGuard)

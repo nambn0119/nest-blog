@@ -32,6 +32,9 @@ let UserController = class UserController {
     findOne(id) {
         return this.userService.findOne(Number(id));
     }
+    multipleDelete(ids) {
+        return this.userService.multipleDelete(ids);
+    }
     create(createUserDto) {
         return this.userService.create(createUserDto);
     }
@@ -83,6 +86,14 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
+    (0, common_1.Delete)('multiple'),
+    __param(0, (0, common_1.Query)('ids', new common_1.ParseArrayPipe({ items: String, separator: ',' }))),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Array]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "multipleDelete", null);
 __decorate([
     (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
     (0, common_1.Post)(),

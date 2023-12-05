@@ -99,6 +99,9 @@ let UserService = class UserService {
     async updateAvatar(id, avatar) {
         return await this.userRepository.update(id, { avatar });
     }
+    async multipleDelete(ids) {
+        return await this.userRepository.delete({ id: (0, typeorm_2.In)(ids) });
+    }
 };
 exports.UserService = UserService;
 exports.UserService = UserService = __decorate([
