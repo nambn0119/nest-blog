@@ -17,6 +17,9 @@ export class Post {
   title: string;
 
   @Column()
+  summary: string;
+
+  @Column()
   description: string;
 
   @Column()

@@ -8,6 +8,7 @@ export declare class UserController {
     private userService;
     constructor(userService: UserService);
     findAll(query: filterUserDto): Promise<User[]>;
+    profile(req: any): Promise<User>;
     findOne(id: string): Promise<User>;
     multipleDelete(ids: string[]): Promise<import("typeorm").DeleteResult>;
     create(createUserDto: CreateUserDto): Promise<User>;

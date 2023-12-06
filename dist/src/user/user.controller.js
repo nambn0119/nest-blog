@@ -29,6 +29,9 @@ let UserController = class UserController {
     findAll(query) {
         return this.userService.findAll(query);
     }
+    profile(req) {
+        return this.userService.findOne(Number(req.user_data.id));
+    }
     findOne(id) {
         return this.userService.findOne(Number(id));
     }
@@ -78,6 +81,14 @@ __decorate([
     __metadata("design:paramtypes", [filter_user_dto_1.filterUserDto]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
+    (0, common_1.Get)('proflie'),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "profile", null);
 __decorate([
     (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
     (0, common_1.Get)(':id'),
